@@ -5,59 +5,85 @@ using InteractionSystem.Runtime.Core;
 namespace InteractionSystem.Runtime.Interactables
 {
     /// <summary>
-    /// Kilit mekanizmalı ve anahtar kontrollü kapı sınıfı.
+    /// Kilit + anahtar kontrollü kapı etkileşimi
     /// </summary>
     public class DoorInteractable : MonoBehaviour, IInteractable
     {
         #region Fields
 
-        [Header("Settings")]
+        [Header("Prompts")]
         [SerializeField] private string m_OpenPrompt = "Press E to Open";
+        [SerializeField] private string m_ClosePrompt = "Press E to Close";
         [SerializeField] private string m_LockedPrompt = "Find Key!";
-        [SerializeField] private bool m_IsLocked = true; // Başlangıçta kilitli
 
-        [Header("References")]
-        [SerializeField] private GameObject m_InteractionUI; // Nesnenin üzerindeki Canvas
+        [Header("State")]
+        [SerializeField] private bool m_IsLocked = true;
+
+        [Header("UI (World Space Canvas)")]
+        [SerializeField] private GameObject m_InteractionUI;
         [SerializeField] private TextMeshProUGUI m_PromptText;
 
         private bool m_IsOpen = false;
 
         #endregion
 
+
         #region Properties
 
-        /// <summary> Kapının durumuna göre dinamik yazı döndürür. </summary>
-        public string InteractionPrompt => m_IsLocked ? m_LockedPrompt : m_OpenPrompt;
-
-        #endregion
-
-        #region Methods
-
-        /// <summary> Oyuncu kapıya baktığında yazıyı açar. </summary>
-        public void OnHoverEnter()
+        /// <summary>
+        /// O an hangi yazının gösterileceğini belirler
+        /// </summary>
+        public string InteractionPrompt
         {
-            if (m_InteractionUI != null)
+            get
             {
-                m_PromptText.text = InteractionPrompt;
-                m_InteractionUI.SetActive(true);
+                if (m_IsLocked)
+                    return m_LockedPrompt;
+
+                return m_IsOpen ? m_ClosePrompt : m_OpenPrompt;
             }
         }
 
-        /// <summary> Oyuncu kafasını çevirdiğinde yazıyı kapatir. </summary>
-        public void OnHoverExit()
+        #endregion
+
+
+        #region Hover Events
+
+        /// <summary>
+        /// Oyuncu kapıya baktığında çağrılır
+        /// </summary>
+        public void OnHoverEnter()
         {
-            if (m_InteractionUI != null)
-                m_InteractionUI.SetActive(false);
+            if (m_InteractionUI == null) return;
+
+            m_PromptText.text = InteractionPrompt;
+            m_InteractionUI.SetActive(true);
         }
 
-        /// <summary> E tuşuna basıldığında tetiklenen ana mantık. </summary>
+        /// <summary>
+        /// Oyuncu bakmayı bırakınca çağrılır
+        /// </summary>
+        public void OnHoverExit()
+        {
+            if (m_InteractionUI == null) return;
+
+            m_InteractionUI.SetActive(false);
+        }
+
+        #endregion
+
+
+        #region Interaction
+
+        /// <summary>
+        /// E tuşuna basılınca çalışır
+        /// </summary>
         public void Interact()
         {
+            // Kilitliyse sadece mesaj göster, açma
             if (m_IsLocked)
             {
-                // TODO: Envanter kontrolü buraya gelecek
-                Debug.Log("Door is locked. You need a key!");
-                m_PromptText.text = m_LockedPrompt;
+                Debug.Log("Door locked");
                 return;
             }
 
@@ -67,18 +93,30 @@ namespace InteractionSystem.Runtime.Interactables
         private void ToggleDoor()
         {
             m_IsOpen = !m_IsOpen;
-            
-            // Kapıyı basitçe 90 derece döndürür (Görsel temsil)
-            float angle = m_IsOpen ? 90f : 0f;
-            transform.localRotation = Quaternion.Euler(0, angle, 0);
-            
+
+            float targetAngle = m_IsOpen ? 90f : 0f;
+            transform.localRotation = Quaternion.Euler(0, targetAngle, 0);
+
+            // 🔥 EN ÖNEMLİ SATIR
+            // Etkileşimden sonra UI kaybolur
+            if (m_InteractionUI != null)
+                m_InteractionUI.SetActive(false);
+
             Debug.Log(m_IsOpen ? "Door Opened" : "Door Closed");
         }
 
-        /// <summary> Dışarıdan anahtar ile kilidi açmak için kullanılır. </summary>
+        #endregion
+
+
+        #region External
+
+        /// <summary>
+        /// Anahtar alındığında dışarıdan çağırılır
+        /// </summary>
         public void Unlock()
         {
             m_IsLocked = false;
+            Debug.Log("Door unlocked");
         }
 
         #endregion
