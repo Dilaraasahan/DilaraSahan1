@@ -1,0 +1,37 @@
+# LLM Kullanım Dokümantasyonu
+
+## Özet
+-Toplam Prompt Sayısı =
+-- Kullanılan araçlar: Gemini, Chatgpt
+- En çok yardım alınan konular: Canvas
+
+---
+
+Promp1: Interable system
+**Araç:** Gemini
+**Tarih/Saat:** 2026-01-30 18:00
+
+**Prompt:**
+benden interaction system isteniyor yani etkileşim sistemi. Bir karakter var ve 3 farklı
+ şekilde nesne etkileşimi olacak. Nesnelerin alınabilir olduğunu oyuncu oyun esnasında 
+ görebilmesi için bi ui canvas tasarlıcaz. oyuncu kapı açacak ama bunu açmak için anahtara
+  ihtiyacı olacak. anahtar sandığın içinde ve sandığı açabilmek içinde tuşa basılı tutması
+   gerekiyor ve oyuncunun bunu da görebilmesi için dolan bir bar çubuğu yapmam isteniyor.
+    Projeye anlattığım akışta başlamalıyım değil mi.
+
+    **Alınan Cevap (Özet):**
+    Akışın doğru olduğu onaylandı. Sistemin modüler olması için önce bir IInteractable arayüzü
+     oluşturulması, ardından merkezi bir InteractionDetector yazılması ve nesnelerin bu
+      arayüzden türetilmesi önerildi. Kodları yazdı direkt kullandım.
+
+**Nasıl Kullandım:**
+- [x] Direkt kullandım
+- [ ] Adapte ettim
+- [ ] Reddettim
+
+Prompt2:  Interable system
+**Araç:** Gemini
+**Tarih/Saat:** 2026-01-30 18:00
+
+**Prompt:**
+

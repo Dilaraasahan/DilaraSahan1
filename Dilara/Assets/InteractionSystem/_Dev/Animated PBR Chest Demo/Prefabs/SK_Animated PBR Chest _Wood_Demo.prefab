@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 6200720779110778461}
   - component: {fileID: 6200720779120667069}
   m_Layer: 0
-  m_Name: Animated PBR Chest _Wood_Demo
+  m_Name: SK_Animated PBR Chest _Wood_Demo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
