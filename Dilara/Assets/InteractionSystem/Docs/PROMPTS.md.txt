@@ -94,6 +94,9 @@ sandığın açılma animasyonunu yapmam gerekiyor
 - [ ] Reddettim
 
 
+Prompt6: 
+Tüm kodları gemini ile yazdım.Ara düzeltmelere ihtiyacı olduğu çok az nokta vardı ve bunlar da 
+kodu okuyabildiğimizde düzeltebildiğimiz basic şeylerdi.
 
 
 
