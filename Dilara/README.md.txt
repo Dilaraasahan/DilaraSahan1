@@ -20,13 +20,35 @@ metodunu çağırır.
 
 ## Ludu Arts Standartlarına Uyum
 - Hangi standartları uyguladım
+-Temel ilkeler başlığı altında isimlendirmelerin ingilizce olması, basit olması gibi kurallar.
+-Kelime ayırma kuralları PascalCase ve Pascal_Case yapısına uydum.
+-Her klasör isminde bu PascalCase yapısına uydum.
+-UI prefabları **P_UI_** ile başlıyor. 
+-Tüm prefablar P_ ile başlıyor
+
 - Zorlandığım noktalar
+ -Texture isimlendirmeleri. Kullandığım az sayıda fakat değiştirmedim.
 
 ## Bilinen Limitasyonlar
 - Tamamlayamadığım özellikler
+ -Switch
+
 - Bilinen bug'lar
-- İyileştirme önerileri
+ - Sandık açıldıktan sonra oyuncunun anahtarı alması için üstüne zıplaması gerekiyor. Colliderları 
+   çakışıyor
+   
+
+-İyileştirme Önerileri
+  -Colliderlar çakıştığı için ve Canvas sisteminde aldığım hatalar çok zamanı aldığı için pratik 
+   çözüm olması için anahtarı sandığın içine gömmek yerine yukarı taşıdım. Buna rağmen yine de bu 
+    noktada oyuncunun üstüne zıplayarak alması gerekse de ilk haline kıyasla hiç olmamasından iyi halde
+
+
+
 
 ## Ekstra Özellikler
 - Bonus olarak eklediklerim
+  -Sandık açılma animasyonu. Hazır olarak vardı ama onların scriptlerini kullanmadım.
+   Kendim bağladım. Idle'da open triggerı ekledim açılma koşulunu scriptte yazdım. Bunları birbirine bağladım.
+
 ```

@@ -31,7 +31,71 @@ benden interaction system isteniyor yani etkileşim sistemi. Bir karakter var ve
 
 Prompt2:  Interable system
 **Araç:** Gemini
-**Tarih/Saat:** 2026-01-30 18:00
+**Tarih/Saat:** 2026-01-30 20:22
 
-**Prompt:**
+**Prompt2:** Şimdi ben bu ui canvası yaptım. İçine panel ve image ekledim. Image kısmına da normal ui spriteı koydum. Bottomu 0a çektim.360 fiilled ayarları vs okey yani. Bottom 1e gelince yatay
+bi şekilde dolması gerekiyor.Bu paneli prefab haline de getirdim her şey prefab olmalı çünkü projede. Şimdi şunu sorucam biz etkileşimli nesneye baktığında ve belli bi mesafedeyken
+yazıların çıkmasını istiyoruz. Canvas sahnenin neresinde olduğu önemli değil mi o zaman? çünkü baktığı etkileşimli nesneler farklı konumlarda birde yazının her baktığı nesnenin tam üstünde
+olmasını istiyorum. Ne kullanıyorduk biz bunu yapmak için?
+   
+   *Alınan Cevap özeti: 
+   -World Space UI kullanımını bana hatırlattı tekrar. Unityde sadece menü için canvas kullanımımıza
+   kıyasla normalinden farkının daha tabela gibi ve istediğim hale evirebileceğim şekliydi bu.
+**Nasıl Kullandım:**
+- [ ] Direkt kullandım
+- [x] Adapte ettim
+- [ ] Reddettim
+
+**Prompt3:** UI Canvas
+**Araç:** Gemini
+**Tarih**: 30.01.2026
+**NOT**: Canvas konusu beklediğimden uzun sürdüğü için proje çok basic şekilde kaldı.
+Canvas ne yaparsam yapayım sahnemde gözükmedi. Gemini'ın yönlendirmeleri doğru olsa da 
+zaten yaptığım şeyleri bana tekrar söylüyordu. Bu benim problemimi çözmedi. Farklı materiallar
+atamayı denedim. Saatler sonra bi tanesi sayesinde tesadüfen oldu. Canvası tetikledi bu sefer ama
+ekranda kocaman duruyodu ve scale yapamıyordum. Devasa halde durmaya başladı.(Tabi bundan önce 
+scale değerleri de dahil her şeyi değiştirmeyi denedim. Geminiden sıfırdan anlatmasını vs istediğim
+eksik yaptığım bir şey yoktu.) Bir iki material değişimi sonrası istediğim şekilde ölçeklendirebildim.
+Yani prompt kullansamda bana bir faydası olmadı. Çok uzun olduğu için özeti bu şekilde.Tabi ben bu 
+hataları alırken Console ekranımda almam gereken geri bildirimleri alıyordum.Kodumda hata olmadığını
+bildiğim için bu kısmı sorgulamama gerek kalmamıştı zaten.Her şey olması gerektiği gibi tetikleniyordu.
+Bu gerçekten çok uzun saatlerime sebep oldu.
+
+- [ ] Direkt kullandım
+- [ ] Adapte ettim
+- [x] Reddettim
+
+
+**Prompt4**: Raycast
+*Araç:* Gemini
+Tarih: 30.01.2026 23.20 
+Prompt: Karakter sandığa yaklaştığında canvas açılmıyor. Zıpladığında açılıyor.Raycast sisteminin
+karakterdeki konumuyla mı ilgili?
+
+Özet: Hemen "gözleri yukarı taşıyalım". önerisi verdi. Kodumu düzeltti ama bu işe yaramadı.
+Raycast'i Kameraya Bağla önerisi ile yeni bir kod dizini verdi ama bu da tabiki işe yaramadı.
+ Kutunun çok az zeminin altında kaldığını farkettim ve sadece yukarı hareket ettirdim biraz,düzeldi :)
+
+ - [ ] Direkt kullandım
+- [ ] Adapte ettim
+- [x] Reddettim
+
+**Prompt5** Key 
+Araç: Gemini
+Tarih: 31.10.2026 01.22
+Prompt:  şimdi bi anahtar nesnesi koymalıyım. Oyuncunun bunu çantasına atmasını hedefliyorum daha kolay. 
+yani şu mantık olcak oyuncu e ile nesneyi alacak ve nesne ordan yok olacak. bunun öncesinde sanırım 
+sandığın açılma animasyonunu yapmam gerekiyor 
+
+Özet: Kodu aldım. Öncesinde sandık açılma animasyonu yaptım. Bunda yardıma ihtiyacım olmadı.
+
+- [x] Direkt kullandım
+- [ ] Adapte ettim
+- [ ] Reddettim
+
+
+
+
+
+
 
